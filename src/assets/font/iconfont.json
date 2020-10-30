@@ -1,0 +1,23 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "385763",
+      "name": "iconfont-right",
+      "font_class": "iconfontright",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    },
+    {
+      "icon_id": "1309077",
+      "name": "Top",
+      "font_class": "21zhiding",
+      "unicode": "e695",
+      "unicode_decimal": 59029
+    }
+  ]
+}

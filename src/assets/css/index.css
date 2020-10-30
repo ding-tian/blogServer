@@ -1,0 +1,67 @@
+ul,
+li,
+body,
+html,
+p {
+  margin: 0;
+  padding: 0;
+}
+body,
+html,
+#app {
+  height: 100%;
+  min-width: 900px;
+  scrollbar-face-color: 1px;
+  /* overflow: hidden; */
+}
+body {
+  font-size: 16px;
+  font-family: '\5FAE\8F6F\96C5\9ED1';
+  color: #666;
+  background-color: #fff;
+  line-height: 1.5;
+}
+/*图片没有边框   去掉图片底侧的空白缝隙*/
+img {
+  border: 0; /*ie6*/
+  vertical-align: middle;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 15px;
+}
+::-webkit-scrollbar-button,
+::-webkit-scrollbar-button:vertical {
+  display: none;
+}
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track:vertical {
+  background-color: black;
+}
+::-webkit-scrollbar-track-piece {
+  background-color: #f5f5f5;
+}
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb:vertical {
+  margin-right: 10px;
+  background-color: #a6a6a6;
+}
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:vertical:hover {
+  background-color: #aaa;
+}
+::-webkit-scrollbar-corner,
+::-webkit-scrollbar-corner:vertical {
+  background-color: #535353;
+}
+::-webkit-scrollbar-resizer,
+::-webkit-scrollbar-resizer:vertical {
+  background-color: #ff6e00;
+}
