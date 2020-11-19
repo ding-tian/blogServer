@@ -39,6 +39,7 @@ export default {
     }
   },
   mounted() {
+    console.log(12)
     // 调用获取文章的方法
     this.getArticle()
     // 注册滚动事件

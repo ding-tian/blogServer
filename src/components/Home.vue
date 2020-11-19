@@ -2,17 +2,20 @@
   <div class="site-content">
     <div class="hero">
       <p>
-        My Name is Nicholas-Zhaosi i'm a web developer in Beijing, It's nice to meet you, I hope we can be good friends
+        1，抗压能力强。 <br />
+        2，有责任感，做事认真负责。 <br />
+        3，适应能力强，能快速融入团队。<br />
+        4，喜欢研究新技术，有较强的自学能力。
       </p>
     </div>
     <div class="guoguang">
       <a> <img src="../assets/computer.jpg" alt="" @load="fun"/></a>
       <div class="work-header" v-show="show">
         <div class="work-meta">
-          <time>March 3,2017-November 11,2018</time>
+          <time>September 7,2018-November 28,2020</time>
         </div>
         <h2 class="post-title">
-          按照产品经理设计需求负责公司产品 web前端功能开发和实现
+          勤勤恳恳学习,安安静静做事, 冲冲冲
         </h2>
         <div class="post-tags">
           <span>#javascript</span>

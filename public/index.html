@@ -5,10 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
-    <title><%= htmlWebpackPlugin.options.title %></title>
-    <meta name="keywords" content="个人博客,好博客" />
+    <base target="_blank" />
+    <title><%= htmlWebpackPlugin.options.isProd ? 'blog' : 'dev-blog' %></title>
 
+    <meta name="keywords" content="个人博客,好博客" />
     <meta name="description" content="个人博客,各种笔记。" />
+
+    <% if(htmlWebpackPlugin.options.isProd) { %>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+    <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+    <script src="https://cdn.staticfile.org/vue/2.5.22/vue.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue-router/3.4.7/vue-router.min.js"></script>
+    <script src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/10.3.2/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.28.5/date_fns.min.js"></script>
+    <% } %>
   </head>
   <body>
     <noscript>

@@ -11,7 +11,7 @@
           </p>
           <!-- 姓名 -->
           <div class="site-identity">
-            <h1>赵四</h1>
+            <h1>帅比</h1>
             <p>WEB DEVELOPER</p>
           </div>
           <!-- 导航列表 -->

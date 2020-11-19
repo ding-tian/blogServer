@@ -32,6 +32,17 @@ a {
 ul {
   list-style: none;
 }
+.clearfix::after,
+.clearfix::before {
+  content: '';
+  display: block;
+}
+.clearfix::after {
+  clear: both;
+}
+.clearfix: {
+  *zoom: 1;
+}
 /* 滚动条样式 */
 ::-webkit-scrollbar {
   width: 5px;
