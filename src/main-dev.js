@@ -19,7 +19,7 @@ Vue.config.productionTip = false
 // 将axios挂载到Vue原型上
 Vue.prototype.$axios = axios
 // 配置请求的根路径
-axios.defaults.baseURL = 'http://localhost:80'
+axios.defaults.baseURL = 'http://127.0.0.1:8089/'
 // 在request中展示进度条 NProgress.start()
 axios.interceptors.request.use((config) => {
   NProgress.start()

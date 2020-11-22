@@ -46,6 +46,16 @@ const routes = [
     }
   }
 ]
+/**
+ * 解决报错问题：报错显示是路由重复
+ * Error: Avoided redundant navigation to current location
+ */
+// 保存push方法
+const originalPush = VueRouter.prototype.push
+// 重写路由的push方法
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch((err) => err)
+}
 
 const router = new VueRouter({
   mode: 'history',

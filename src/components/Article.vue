@@ -4,8 +4,8 @@
     <div v-html="article"></div>
     <!-- 上一章与下一章切换 -->
     <div class="flip">
-      <div class="pageup" @click="toggle('up')">上一章</div>
-      <div class="pagedown" @click="toggle('down')">下一章</div>
+      <div class="pageup" @click="toggle('up')" v-show="upShow">上一章</div>
+      <div class="pagedown" @click="toggle('down')" v-show="downShow">下一章</div>
     </div>
     <!-- 返回顶部按钮 -->
     <div class="fixed-btn" v-show="btnShow">
@@ -20,6 +20,7 @@
 // 引入markdown主题
 import hljs from 'highlight.js'
 import 'highlight.js/styles/srcery.css'
+
 export default {
   name: 'Artivle',
   data() {
@@ -35,11 +36,21 @@ export default {
   computed: {
     // 计算页面是否在顶部
     btnShow() {
-      return !(this.width === '0%')
+      return !(this.width === '0%') || this._isMobile()
+    },
+    upShow() {
+      const { id } = this.$route.params
+      const index = this.noteList.findIndex((note) => note.name === id)
+      return index !== 0
+    },
+    downShow() {
+      const { id } = this.$route.params
+      const index = this.noteList.findIndex((note) => note.name === id)
+      return index !== this.noteList.length - 1
     }
   },
+
   mounted() {
-    console.log(12)
     // 调用获取文章的方法
     this.getArticle()
     // 注册滚动事件
@@ -52,6 +63,13 @@ export default {
     window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
+    // 判断是否手机端
+    _isMobile() {
+      const flag = navigator.userAgent.match(
+        /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
+      )
+      return flag
+    },
     // 获取文章内容
     async getArticle() {
       // 获取传递的文章名
@@ -70,6 +88,7 @@ export default {
         })
       })
     },
+    updatePage() {},
     // 滚动触发的事件
     handleScroll() {
       // 页面的高度
@@ -112,21 +131,31 @@ export default {
       console.log(this.noteList)
     },
     // 上一章
-    toggle(count) {
+    async toggle(count) {
       const { id } = this.$route.params
+      console.log(id)
+
       const index = this.noteList.findIndex((note) => note.name === id)
       let note
       if (count === 'up') {
         if (index === 0) return
         note = this.noteList[index - 1].name
       } else {
-        if (index === this.noteList.length) return
+        if (index === this.noteList.length - 1) return
         note = this.noteList[index + 1].name
       }
-
-      console.log(note)
-      // this.$router.push(note)
-      window.location = note
+      // 获取文章内容
+      const { data } = await this.$axios.get('/note/getNoteByName/' + note)
+      // 将获取的文章内容赋值给this
+      this.article = data
+      //   一旦完成界面更新, 立即调用
+      // 获取页面dom元素
+      const blocks = document.querySelectorAll('pre code')
+      blocks.forEach((block) => {
+        // 让dom元素使用上markdown主题
+        hljs.highlightBlock(block)
+        this.$router.push(note)
+      })
     }
   }
 }

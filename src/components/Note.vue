@@ -18,7 +18,6 @@
 </template>
 
 <script>
-import { format } from 'date-fns'
 export default {
   name: 'Note',
   data() {
@@ -46,7 +45,15 @@ export default {
   filters: {
     // 处理时间的
     formatDate(date) {
-      return format(new Date(date), 'yyyy-MM-dd hh:mm:ss')
+      const newDate = new Date(date)
+      console.dir(newDate)
+      const year = newDate.getFullYear()
+      const month = newDate.getMonth()
+      const day = newDate.getDate()
+      const hour = newDate.getHours()
+      const minute = newDate.getMinutes()
+      const second = newDate.getSeconds()
+      return `${year}-${month}-${day} ${hour}:${minute}:${second}`
     }
   }
 }

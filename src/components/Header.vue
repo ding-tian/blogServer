@@ -128,8 +128,8 @@ export default {
 
   .wx img {
     margin-top: 50px;
-    width: 150px;
-    height: 150px;
+    width: 80%;
+    height: 80%;
   }
 }
 

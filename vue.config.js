@@ -10,8 +10,7 @@ module.exports = {
         'vue-router': 'VueRouter',
         axios: 'axios',
         nprogress: 'NProgress',
-        'highlight.js': 'hljs',
-        'date-fns': 'dateFns'
+        'highlight.js': 'hljs'
       })
       config.plugin('html').tap((args) => {
         args[0].isProd = true

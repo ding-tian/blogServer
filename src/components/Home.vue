@@ -5,7 +5,8 @@
         1，抗压能力强。 <br />
         2，有责任感，做事认真负责。 <br />
         3，适应能力强，能快速融入团队。<br />
-        4，喜欢研究新技术，有较强的自学能力。
+        4，喜欢研究新技术，有较强的自学能力。<br />
+        5，<a href="https://github.com/ding-tian/blogServer">源码链接地址</a>
       </p>
     </div>
     <div class="guoguang">
