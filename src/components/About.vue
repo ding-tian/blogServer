@@ -12,7 +12,13 @@
       <li>学历: 大专</li>
     </ul>
     <div class="statement">
-      本博客属个人所有，不涉及商业目的。遵守中华人民共和国法律法规、中华民族基本道德和基本网络道德规范，尊重有节制的言论自由和意识形态自由，反对激进、破坏、低俗、广告、投机等不负责任的言行。所有转载的文撰写页面章、图片仅用于说明性目的，被要求或认为适当时，将标注署名与来源。避免转载有明确“不予转载”声明的作品。若不愿某一作品被转用，请及时通知本人。对于无版权或自由版权作品，本博客有权进行修改和传播，一旦涉及实质性修改，本博客将对修改后的作品享有相当的版权。二次转载者请再次确认原作者所给予的权力范围。本博客所有原创作品，包括文字、资料、图片、网页格式，转载时请标注作者与来源。非经允许，不得用于赢利目的。本博客受中国知识产权、互联网法规和知识共享条例保护和保障，任何人不得进行旨在破坏或牟取私利的行为。本博客声明以简体中文版为准，不对其他语言版本负责。
+      <h3>其他项目</h3>
+      <ul class="project">
+        <li><a href="http://dt_love_gj.gitee.io/todolist/">todolist</a></li>
+        <li><a href="http://dt_love_gj.gitee.io/honor-of-kings/">王者荣耀</a></li>
+        <li><a href="https://dt_love_gj.gitee.io/h5-animation/">h5动画</a></li>
+        <li><a href="http://121.196.96.144:8080">多人社交网</a></li>
+      </ul>
     </div>
   </div>
 </template>
@@ -50,5 +56,37 @@ export default {
   padding-top: 2em;
   font-size: 1.3em;
   line-height: 1.8;
+  .project {
+    animation: run 1s;
+    transform: translate(5vw, 8vh);
+    li {
+      float: left;
+      text-align: center;
+      width: 30vw;
+      height: 10vh;
+      line-height: 10vh;
+      background-color: #29d;
+      margin-top: 1px;
+      margin-left: 1px;
+    }
+    a {
+      color: #f5f5f5;
+      font-size: 50px;
+      transition: all 0.5s;
+      &:hover {
+        font-size: 60px;
+      }
+    }
+  }
+}
+@keyframes run {
+  0% {
+    opacity: 0;
+    transform: translate(-13vw, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(5vw, 8vh);
+  }
 }
 </style>
